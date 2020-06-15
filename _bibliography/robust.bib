@@ -1,0 +1,115 @@
+---
+---
+@STRING{colt2020 = {Proceedings of the 33rd Annual Conference on Learning Theory (COLT 2020)}}
+@STRING{ijcai2019 = { Proceedings of the 28th International Joint Conference on
+  Artificial Intelligence (IJCAI-19)}}
+
+@misc{DKZ20,
+  author = {Ilias Diakonikolas and Daniel M. Kane and Nikos Zarifis},
+  title = {Near-Optimal SQ Lower Bounds for Agnostically Learning Halfspaces and ReLUs under Gaussian Marginals},
+  note = {Manuscript},
+  year = {2020}
+}
+@misc{diakonikolas2020nonconvex,
+    title={Non-Convex SGD Learns Halfspaces with Adversarial Label Noise},
+    author={Ilias Diakonikolas and Vasilis Kontonis and Christos Tzamos and Nikos Zarifis},
+    year={2020},
+    eprint={2006.06742},
+    arxiv={2006.06742},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}, 
+    abstract={We study the problem of agnostically
+                                    learning homogeneous halfspaces in the
+                                    distribution-specific PAC model. For a broad
+                                    family of structured distributions,
+                                    including log-concave distributions, we show
+                                    that non-convex SGD efficiently converges to
+                                    a solution with misclassification error
+                                    $O(OPT)+\epsilon$, where $OPT$ is the
+                                    misclassification error of the best-fitting
+                                    halfspace. In sharp contrast, we show that
+                                    optimizing any convex surrogate inherently
+                                    leads to misclassification error of
+                                    $\omega(OPT)$, even under Gaussian
+                                    marginals.}
+}
+@misc{diakonikolas2020learning,
+title={Learning Halfspaces with Tsybakov Noise},
+    author={Ilias Diakonikolas and Vasilis Kontonis and Christos Tzamos and Nikos Zarifis},
+    abstract={We study the efficient PAC
+  learnability of halfspaces in the presence of Tsybakov noise. In the Tsybakov
+  noise model, each label is independently flipped with some probability which
+  is controlled by an adversary. This noise model significantly generalizes the
+  Massart noise model, by allowing the flipping probabilities to be arbitrarily
+  close to $1/2$ for a fraction of the samples. Our main result is the first
+  non-trivial PAC learning algorithm for this problem under a broad family of
+  structured distributions -- satisfying certain concentration and
+  (anti-)anti-concentration properties -- including log-concave distributions.
+  Specifically, we given an algorithm that achieves misclassification error
+  $\epsilon$ with respect to the true halfspace, with quasi-polynomial runtime
+  dependence in $1/\epsilon$. The only previous upper bound for this problem --
+  even for the special case of log-concave distributions -- was doubly
+  exponential in $1/\epsilon$ (and follows via the naive reduction to agnostic
+  learning). Our approach relies on a novel computationally efficient procedure
+  to certify whether a candidate solution is near-optimal, based on
+  semi-definite programming. We use this certificate procedure as a black-box
+  and turn it into an efficient learning algorithm by searching over the space
+  of halfspaces via online convex optimization.},
+    year={2020},
+    booktitle = {Manucript},
+    eprint={2006.06467},
+    arxiv={2006.06467},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+
+@inproceedings{DKKZ20,
+  author = {Ilias Diakonikolas and Daniel M. Kane and Vasilis Kontonis and Nikos Zarifis},
+  title = {Algorithms and SQ Lower Bounds for PAC Learning
+	One-Hidden-Layer ReLU Networks},
+  booktitle = colt2020,
+  year = {2020},
+  abstract= {We study the problem of PAC learning one-hidden-layer ReLU networks
+with $k$ hidden units
+on $\R^d$ under Gaussian marginals in the presence of additive label noise. 
+For the case of positive coefficients, we give the first polynomial-time algorithm 
+for this learning problem for $k$ up to $\tilde{\Omega}(\sqrt{\log d})$. 
+Previously, no polynomial time algorithm was known, even for $k=3$.
+This answers an open question posed by~\cite{Kliv17}. Importantly,
+our algorithm does not require any assumptions about the rank of the weight matrix
+and its complexity is independent of its condition number. On the negative side,
+for the more general task of PAC learning one-hidden-layer ReLU networks with positive or negative coefficients, 
+we prove a Statistical Query lower bound of $d^{\Omega(k)}$. Thus, we provide a 
+separation between the two classes in terms of efficient learnability.
+Our upper and lower bounds are general, extending to broader families of activation functions.
+
+             }
+}
+@inproceedings{diakonikolas2020learning, 
+   title={Learning Halfspaces with Massart Noise Under Structured Distributions},
+    author={Ilias Diakonikolas and Vasilis Kontonis and Christos Tzamos and Nikos Zarifis},
+    abstract={We study the problem of learning
+  halfspaces with Massart noise in the distribution-specific PAC model. We give
+  the first computationally efficient algorithm for this problem with respect to
+  a broad family of distributions, including log-concave distributions. This
+  resolves an open question posed in a number of prior works. Our approach is
+  extremely simple: We identify a smooth {\em non-convex} surrogate loss with
+  the property that any approximate stationary point of this loss defines a
+  halfspace that is close to the target halfspace. Given this structural result,
+  we can use SGD to solve the underlying learning problem.},
+    year={2020},
+    booktitle = colt2020,
+    eprint={2002.05632},
+    arxiv={2002.05632},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+@inproceedings{fotakis2019reallocating,
+  title={Reallocating multiple facilities on the line},
+  author={Fotakis, Dimitris and Kavouras, Loukas and Kostopanagiotis, Panagiotis and Lazos, Philip and Skoulakis, Stratis and Zarifis, Nikos},
+  booktitle=ijcai2019,
+  journal={arXiv preprint},
+  arxiv={1905.12379},
+  year={2019},
+  abstract={We study the multistage $K$-facility reallocation problem on the real line, where we maintain $K$ facility locations over $T$ stages, based on the stage-dependent locations of $n$ agents. Each agent is connected to the nearest facility at each stage, and the facilities may move from one stage to another, to accommodate different agent locations. The objective is to minimize the connection cost of the agents plus the total moving cost of the facilities, over all stages. $K$-facility reallocation was introduced by de Keijzer and Wojtczak, where they mostly focused on the special case of a single facility. Using an LP-based approach, we present a polynomial time algorithm that computes the optimal solution for any number of facilities. We also consider online $K$-facility reallocation, where the algorithm becomes aware of agent locations in a stage-by-stage fashion. By exploiting an interesting connection to the classical $K$-server problem, we present a constant-competitive algorithm for $K = 2$ facilities.}
+}
